@@ -1,0 +1,22 @@
+﻿@model ManageLibraryItemsAndEmployees.Data.Entities.Employee
+
+@{
+    ViewData["Title"] = @Html.DisplayFor(model => model.FullName);
+}
+
+<div>
+    <h1>Employee name: /@Html.DisplayFor(model => model.FullName)/</h1>
+
+
+    <h3>Salary: @Html.DisplayNameFor(model => model.Salary) </h3>
+
+    <h3>IsCEO: @Html.DisplayNameFor(model => model.IsCEO) </h3>
+
+    <h3>IsManager: @Html.DisplayNameFor(model => model.IsManager)</h3>
+
+    <h3>ManagerId: @Html.DisplayNameFor(model => model.ManagerId)</h3>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

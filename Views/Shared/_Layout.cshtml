@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]-manage library items</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/global-style.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img class="logo-image col-1"
+                             src="https://ncwc.edu/wp-content/uploads/2016/06/library-icon.png"
+                             alt="logo-img" />
+                    </a>
+                </div>
+              
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                 
+                </ul>
+                <div class="h-container">
+                    <div class="v-container search-bar-container">
+                        <form class="v-container search-bar-container" asp-controller="SearchResult" asp-action="Index">
+                            <input class="search-bar"
+                                   type="search"
+                                   name="q"
+                                   placeholder="Search...  "
+                                   required />
+                            <i class="material-icons left-on-top">search</i>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="emergency-contact-container">
+                    
+                    <partial name="_LoginPartial">
+                </div>
+                  <div class="h-container shopping-cart-icon-container">
+                    <i class="material-icons">shopping_cart</i>
+                    <div id="online-status"></div>
+                </div>
+                <button>
+                    <a asp-area="" asp-controller="AdminLogin" asp-action="Index" class="account-link" id="login-switcher">
+                  
+                    Admin
+                    </a>
+                </button>
+            </div>
+              
+        </nav>
+
+    </header>
+
+    <!-- Body -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-top footer text-muted w3-container w3-padding-32 w3-light-grey w3-center">
+        <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <div class="container">
+            &copy; 2022 - manage_library_items_and_employees
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

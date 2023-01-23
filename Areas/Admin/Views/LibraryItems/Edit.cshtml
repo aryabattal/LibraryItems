@@ -1,0 +1,80 @@
+﻿@model ManageLibraryItemsAndEmployees.Areas.Admin.Models.ViewModels.EditLibraryItemViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Library Item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <div class="v-container align-items-lg-stretch">
+                    <label asp-for="Categories" class="control-label"></label>
+                    <select asp-for="Categories"
+                            asp-items="@ViewBag.Categories">
+                    </select>
+                </div>
+                <span asp-validation-for="Categories" class="text-danger"></span>
+            </div>
+         <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Pages" class="control-label"></label>
+                <input asp-for="Pages" class="form-control" />
+                <span asp-validation-for="Pages" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="RunTimeMinutes" class="control-label"></label>
+                <input asp-for="RunTimeMinutes" class="form-control" />
+                <span asp-validation-for="RunTimeMinutes" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="IsBorrowable" class="control-label"></label>
+                <select asp-for="IsBorrowable"
+                        asp-items="@ViewBag.IsBorrowable">
+                    </select>
+                <span asp-validation-for="IsBorrowable" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Borrower" class="control-label"></label>
+                <input asp-for="Borrower" class="form-control" />
+                <span asp-validation-for="Borrower" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="BorrowerDate" class="control-label"></label>
+                <input asp-for="BorrowerDate" class="form-control" />
+                <span asp-validation-for="BorrowerDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

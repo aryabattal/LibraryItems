@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LibraryItem>
+
+
+<link rel="stylesheet" href="~/css/components/category-components.css" />
+<h1 class="text-center main-content">Search results:</h1>
+
+<div class="product-container">
+
+    <div class="h-container justify-content-between">
+        <span class="product-name">Title</span>
+        <span class="product-name">Author</span>
+        <span class="product-name">CategoryName</span>
+        <span class="product-name">Type</span>
+        <span class="product-name">Pages</span>
+    </div>
+</div>
+<div class="grid-container product-grid">
+    @foreach (var libraryItem in Model)
+    {
+        <a asp-route="libraryItemsdetails" asp-route-urlSlug="@libraryItem.Title">
+            <div class="product-container">
+                
+                <div class="h-container justify-content-between">
+                    <span class="product-name">@libraryItem.Title</span>
+                    <span class="product-name">@libraryItem.Author</span>
+                    <span class="product-name">@libraryItem.CategoryId</span>
+                    <span class="product-name">@libraryItem.Type</span>
+                    <span class="product-name">@libraryItem.Pages Pages</span>
+                </div>
+            </div>
+        </a>
+    }
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManageLibraryItemsAndEmployees</name>
+    </assembly>
+    <members>
+        <member name="M:ManageLibraryItemsAndEmployees.Areas.API.v1.Controllers.AuthController.CreateToken(ManageLibraryItemsAndEmployeese.Areas.API.v1.Models.CredentialsDto)">
+            <summary>
+            Generate authentication token
+            </summary>
+            <param name="credentialsDto">User credentials</param>
+            <returns>Token</returns>
+        </member>
+    </members>
+</doc>

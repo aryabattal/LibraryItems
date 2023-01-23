@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ManageLibraryItemsAndEmployees.Data.Entities.Category>
+
+ <table class="table">
+    <thead>
+        <tr>
+            <th>
+              Title
+            </th>
+            <th>
+               Author
+            </th>
+            <th>
+               Pages
+            </th>
+            <th>
+               Type
+            </th>
+            <th>
+               Category name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var category in Model)
+    {
+        <a asp-route="" asp-route-urlSlug="@category.UrlSlug">
+            <tbody>
+                @if (category.SelectLibraryitems != null)
+                {
+                    <tr>
+                        <td>
+                            @category.SelectLibraryitems.Title 
+            </td>
+            <td>
+                            @category.SelectLibraryitems.Author
+            </td>
+            <td>
+                            @category.SelectLibraryitems.Pages
+            </td>
+               
+            <td>
+                            @category.SelectLibraryitems.Type
+            </td>
+            <td>
+                        @category.CategoryName
+            </td>
+            <td>
+                <div class="purchase-button-container">
+                    <form asp-route="AddToCart" method="post">
+                                <input type="hidden" name="libraryItemId" value="@category.SelectLibraryitems.Id" />
+                        <button class="purchase-button">
+                            Add To Cart <i class="material-icons">shopping_cart</i>
+                        </button>
+                    </form>
+                    </div>
+            </td>
+        </tr>
+        }
+      
+    </tbody>
+        </a>
+    }
+    </table>
+ 
